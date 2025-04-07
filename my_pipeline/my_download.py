@@ -17,7 +17,7 @@ def preprocessing(path2df):
     columns_to_drop.append('Student_ID')
     df.drop(columns=columns_to_drop, inplace=True)
 
-    df['Pass_Fail'] = df['Pass_Fail'].apply(lambda x: 1 if x == 'pass' else 0)
+    df['Pass_Fail'] = df['Pass_Fail'].apply(lambda x: 1 if x == 'Pass' else 0)
 
     cat_columns = ['Gender', 'Parental_Education_Level', 'Internet_Access_at_Home', 'Extracurricular_Activities']
     df_encoded = pd.get_dummies(df, columns=cat_columns, drop_first=True)
